@@ -1,0 +1,287 @@
+body {
+    font-family: 'Poppins',sans-serif;
+     margin: 0;
+     background-color: #f9f9f9; /* Latar belakang abu-abu muda */
+     background-image: url('https://images.unsplash.com/photo-1599009001281-f484e49730c3'); /* Gambar latar belakang */
+     background-size: cover; /* Ukuran gambar latar belakang penuh */
+     background-repeat: no-repeat; /* Tidak mengulang gambar */
+     background-position: center; /* Pusatkan gambar */
+     color: #333; /* Teks abu-abu gelap */
+     
+ }
+ header {
+     background-color: rgba(255, 255, 255, 0.8); /* Latar belakang putih transparan untuk header */
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+     padding: 20px; /* Padding untuk header */
+     display: flex; /* Menggunakan flexbox */
+     justify-content: space-between; /* Menjaga jarak antar elemen */
+     align-items: center; /* Menjaga semua item rata tengah */
+     position: sticky;
+     top: 0; /* Header yang lengket */
+     z-index: 1000; /* Menjaga di atas */
+ }
+ .login-container {
+     display: flex; /* Flexbox untuk tombol masuk */
+     align-items: center; /* Rata tengah secara vertikal */
+ }
+ nav {
+     display: flex; /* Navigasi horizontal */
+     gap: 15px; /* Jarak antar item navigasi */
+ }
+ nav a {
+     text-decoration: none;
+     color: #555; /* Teks abu-abu */
+     padding: 10px 15px; /* Padding di sekitar tautan */
+     transition: color 0.3s; /* Transisi warna yang halus */
+     font-size: 1rem; /* Ukuran font untuk navigasi */
+     border: 2px solid transparent; /* Border transparan untuk efek hover */
+     border-radius: 25px; /* Sudut bulat */
+     letter-spacing: 1.2px;
+     font-family: 'Times New Roman', Times, serif;
+ }
+ nav a:hover {
+     color: white;
+     background-color: #666;
+     
+ }
+ .btn-header {
+     margin: 0 1220px;
+     background-color: #000000; /* Warna hitam tombol */
+     color: white; /* Teks putih */
+     padding: 10px 20px; /* Padding tombol */
+     border: none; /* Tanpa border */
+     border-radius: 25px; /* Sudut bulat */
+     cursor: pointer; /* Kursor pointer */
+     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transisi yang halus */
+     font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat */
+     font-size: 1rem; /* Ukuran font tombol */
+     font-weight: bold; /* Mengubah font menjadi bold */
+     position: absolute;
+ }
+ .btn-header:hover {
+     background-color: #555; /* Abu-abu saat hover */
+     transform: translateY(-2px); /* Efek mengangkat saat hover */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+ }
+ h1 {
+     text-align: right; /* Judul di tengah */
+     font-size: 3rem; /* Ukuran besar untuk judul */
+     color: #1a202c; /* Abu-abu gelap */
+     margin-top: 20px; /* Margin di atas */
+     font-family: 'Playfair Display', serif; /* Menggunakan font yang lebih elegan untuk judul */
+     margin-right: 320px;
+     margin-top: 150px;
+     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+ }
+ h2 {
+     font-size: 2rem; /* Ukuran subjudul */
+     color: #1a202c; /* Abu-abu gelap */
+     margin-top: 20px; /* Margin di atas */
+     font-family: 'Playfair Display', serif; /* Menggunakan font yang lebih elegan untuk subjudul */
+ }
+ p {
+     text-align: left; /* Teks di tengah */
+     color: #666; /* Abu-abu lebih terang */
+     margin: 20px 0px 0 650px; /* Margin untuk paragraf */
+ }
+ .btn {
+     background-color: #000000; /* Tombol hitam */
+     color: white; /* Teks putih */
+     padding: 12px 25px; /* Padding tombol */
+     border: none; /* Tanpa border */
+     border-radius: 25px; /* Tombol bulat */
+     cursor: pointer; /* Kursor pointer */
+     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transisi yang halus */
+     text-align: center; /* Teks di tengah */
+     display: inline-block; /* Inline block untuk tombol */
+     font-size: 1.1rem; /* Ukuran font yang lebih besar */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan tombol */
+ }
+ .btn:hover {
+     background-color: #5a5a5a; /* Abu-abu lebih gelap saat hover */
+     transform: translateY(-3px); /* Efek mengangkat saat hover */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+ }
+ .grid {
+     display: grid; /* Layout grid */
+     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Kolom responsif */
+     gap: 20px; /* Jarak antar item grid */
+     margin-top: 40px; /* Margin di atas */
+ }
+ .card {
+     background-color: white; /* Latar belakang putih untuk kartu */
+     border-radius: 10px; /* Sudut melengkung */
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Bayangan kartu */
+     overflow: hidden; /* Tidak ada overflow */
+ }
+ .card img {
+     width: 100%; /* Gambar lebar penuh */
+     height: auto; /* Tinggi otomatis untuk rasio aspek */
+ }
+ .card-content {
+     padding: 20px; /* Padding untuk konten kartu */
+ }
+ .scrolling-gallery {
+     display: flex; /* Flexbox untuk galeri */
+     overflow-x: auto; /* Mengaktifkan scroll horizontal */
+     padding: 20px 0; /* Padding untuk galeri */
+ }
+ .scrolling-gallery img {
+     min-width: 200px; /* Lebar minimum untuk gambar */
+     height: 150px; /* Tinggi gambar */
+     margin-right: 10px; /* Jarak antar gambar */
+     border-radius: 10px; /* Sudut melengkung untuk gambar */
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk gambar */
+ }
+ @media (max-width: 768px) {
+     h1 {
+         font-size: 2.5rem; /* Ukuran judul disesuaikan */
+     }
+     h2 {
+         font-size: 1.5rem; /* Ukuran subjudul disesuaikan */
+     }
+ }
+ 
+ .logo img {
+     width: 90px;
+     position: absolute;
+     margin: -25px 0 0 -1300px;
+ }
+ 
+ .test {
+     background-color: white;
+     position: absolute;
+     padding: 100px;
+     border: white 2px solid;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     margin: 100px;
+     border-radius: 10px;
+ }
+ 
+ .test:hover {
+     transform: translateY(-3px); /* Efek mengangkat saat hover */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+ }
+ 
+ .test1 {
+     background-color: white;
+     position: absolute;
+     padding: 100px;
+     border: white 2px solid;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     margin: 100px 500px;
+     border-radius: 10px;
+ }
+ 
+ .test1:hover {
+     transform: translateY(-3px); /* Efek mengangkat saat hover */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+ }
+ 
+ .test2 {
+     background-color: white;
+     position: absolute;
+     padding: 100px;
+     border: white 2px solid;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     margin: 100px 850px;
+     border-radius: 10px;
+ }
+ 
+ .test2:hover {
+     transform: translateY(-3px); /* Efek mengangkat saat hover */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+ }
+ 
+ .informasi {
+     line-height: 1.9;
+     margin: 400px;
+ }
+ 
+ .gambar img{
+     height: 750px;
+     position: absolute;
+     margin-bottom: 200px;
+     margin-left: 150px;
+     cursor: pointer;
+ }
+ 
+ .gambar {
+     padding-bottom: 5px;
+     transition: ease 1.2s;
+ }
+ 
+ .btn-header1 {
+     margin: 20px 750px;
+     background-color: #000000; /* Warna hitam tombol */
+     color: white; /* Teks putih */
+     padding: 10px 20px; /* Padding tombol */
+     border: none; /* Tanpa border */
+     border-radius: 25px; /* Sudut bulat */
+     cursor: pointer; /* Kursor pointer */
+     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transisi yang halus */
+     font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat */
+     font-size: 1rem; /* Ukuran font tombol */
+     font-weight: bold; /* Mengubah font menjadi bold */
+     position: absolute;
+ }
+ .btn-header1:hover {
+     background-color: #555; /* Abu-abu saat hover */
+     transform: translateY(-2px); /* Efek mengangkat saat hover */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+ }
+ 
+ .btn-header2 {
+     margin: 20px 650px;
+     background-color: #000000; /* Warna hitam tombol */
+     color: white; /* Teks putih */
+     padding: 10px 20px; /* Padding tombol */
+     border: none; /* Tanpa border */
+     border-radius: 25px; /* Sudut bulat */
+     cursor: pointer; /* Kursor pointer */
+     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transisi yang halus */
+     font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat */
+     font-size: 1rem; /* Ukuran font tombol */
+     font-weight: bold; /* Mengubah font menjadi bold */
+     position: absolute;
+ }
+ .btn-header2:hover {
+     background-color: #555; /* Abu-abu saat hover */
+     transform: translateY(-2px); /* Efek mengangkat saat hover */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+ }
+ 
+ .profil-bio-container { 
+     display: flex; /* Menggunakan flexbox untuk tata letak horizontal */ 
+     align-items: center; /* Menyelaraskan elemen secara vertikal di tengah */ 
+     gap: 5px; /* Jarak antara elemen profil dan bio */ 
+     margin: 90px; /* Margin di sekitar kontainer */
+     margin-top: 500px;
+ } 
+     
+ .profil img{ 
+     width: 300px; /* Lebar tetap untuk elemen */ 
+     margin-left: 100px;
+ } 
+     
+ .bio p { 
+     max-width: 600px; /* Lebar maksimum untuk elemen bio */ 
+     margin-bottom: 420px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+     padding: 20px 20px 20px 20px;
+     margin-left: 50px;
+ }
+ 
+ .footer {
+     background-color: #6e2828;
+     margin-top: 500px;
+     height: 200px;
+     display: flex;
+ }
+ 
+ .logofooter img {
+     width: 1000px;
+     position: absolute;
+     margin-bottom: 100px;
+ }

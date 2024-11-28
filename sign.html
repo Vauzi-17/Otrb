@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Pendaftaran & Login</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Gaya Umum */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: 1200px; /* Memperlebar kotak login */
+      background-color: #ffffff;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.411);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .form-container {
+      flex: 1;
+      padding: 60px; /* Menambah padding agar terlihat lebih besar */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-container h1 {
+      font-size: 1.8rem; /* Memperbesar ukuran teks judul */
+      font-weight: bold;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1rem; /* Memperbesar ukuran teks label */
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+    }
+
+    .button {
+      width: 100%;
+      padding: 0.75rem; /* Memperbesar tombol */
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .button-primary {
+      background-color: #000000;
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .button-primary:hover {
+      transform: scale(1.02);
+    }
+
+
+    .footer-text {
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    .footer-text a {
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .poster-container {
+      flex: 1;
+      background-image: url('Poster.png');
+      background-position: center;
+      background-size: cover;
+      width: 800px;
+      height: 700px; /* Memperbesar tinggi gambar poster */
+      cursor: pointer;
+    }
+    #form-title {
+      margin-top: -280px;
+      padding-top: 120px;
+    }
+
+    .form-group {
+      padding-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" id="auth-container">
+    <div class="form-container">
+      <h1 id="form-title">Daftar Akun</h1>
+      <form id="auth-form" onsubmit="return handleAuth()" autocomplete="off">
+        <div class="form-group">
+          <label for="username">Nama</label>
+          <input type="text" id="username" placeholder="Masukkan Nama" name="username_fake" autocomplete="off" onfocus="clearAutofill(this)">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Masukkan Email" name="email_fake" autocomplete="off" onfocus="clearAutofill(this)">
+        </div>
+        <div class="form-group">
+          <label for="password">Kata Sandi</label>
+          <input type="password" id="password" placeholder="Masukkan Kata Sandi" name="password_fake" autocomplete="new-password" onfocus="clearAutofill(this)">
+        </div>
+        <button type="submit" class="button button-primary" id="submit-btn">Daftar</button>
+      </form>
+      <p class="footer-text" id="toggle-auth">
+        Sudah punya akun? <a onclick="toggleForm()">Masuk sekarang!</a>
+      </p>
+    </div>
+    <div class="poster-container"></div>
+  </div>
+
+  <script>
+    let isLogin = false; // Status apakah pengguna sedang login atau daftar
+
+    function toggleForm() {
+      isLogin = !isLogin;
+      document.getElementById("form-title").textContent = isLogin ? "Masuk" : "Daftar Akun";
+      document.getElementById("submit-btn").textContent = isLogin ? "Masuk" : "Daftar";
+      document.getElementById("toggle-auth").innerHTML = isLogin
+        ? 'Belum punya akun? <a onclick="toggleForm()">Daftar sekarang!</a>'
+        : 'Sudah punya akun? <a onclick="toggleForm()">Masuk sekarang!</a>';
+    }
+
+    function clearAutofill(input) {
+      input.value = "";
+    }
+
+    function handleAuth() {
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (!username || !email || !password) {
+        alert("Semua kolom harus diisi!");
+        return false;
+      }
+
+      if (isLogin) {
+        // Proses Login
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+
+        if (storedUser && storedUser.email === email && storedUser.password === password) {
+          alert(`Login berhasil! Selamat datang, ${storedUser.username}.`);
+          window.location.href = "home2.html"; // Mengarahkan ke home.html
+        } else {
+          alert("Email atau kata sandi salah. Silakan coba lagi.");
+        }
+      } else {
+        // Proses Daftar
+        const newUser = { username, email, password };
+        localStorage.setItem("user", JSON.stringify(newUser));
+        alert("Pendaftaran berhasil! Silakan masuk.");
+        toggleForm();
+      }
+
+      return false;
+    }
+  </script>
+</body>
+</html>
